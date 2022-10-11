@@ -327,18 +327,18 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
-    # response = post(url, headers=headers, json=data).json()
-    # if response["errcode"] == 40037:
-    #     print("推送消息失败，请检查模板id是否正确")
-    # elif response["errcode"] == 40036:
-    #     print("推送消息失败，请检查模板id是否为空")
-    # elif response["errcode"] == 40003:
-    #     print("推送消息失败，请检查微信号是否正确")
-    # elif response["errcode"] == 0:
-    #     # return 0
-    #     print("推送消息成功")
-    # else:
-    #     print(response)
+    response = post(url, headers=headers, json=data).json()
+    if response["errcode"] == 40037:
+        print("推送消息失败，请检查模板id是否正确")
+    elif response["errcode"] == 40036:
+        print("推送消息失败，请检查模板id是否为空")
+    elif response["errcode"] == 40003:
+        print("推送消息失败，请检查微信号是否正确")
+    elif response["errcode"] == 0:
+        # return 0
+        print("推送消息成功")
+    else:
+        print(response)
 
 
 if __name__ == "__main__":
